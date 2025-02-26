@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="UTF-8">
+			<title>일부분 지정 태그(span)를 통한 css변경</title>
+			<style type="text/css">
+				/* .box라는 이름을 가진 클래스의 자식(내부태그)중 h2태그에게만 속성을 적용  중요!
+            			띄어쓰기가 내 안에 있는 자식 요소에 적용되기 때문에 띄어쓰기는 주의해서 써야 한다.*/
+				body .box h2{color:aqua;}
+				span{color : gray;}
+				body div.box h2 span{color : red;};
+			</style>
+		</head>
+		
+		<body>
+			<div class="box">
+				
+				<h2>클래스 <span>연습</span>중</h2>
+				<h1>클래스 연습중이라고!</h1>
+				
+				<div class="box">
+					<h2>클래스 <span class="span_blue">연습</span>중2</h2>
+					
+				</div>
+			</div>
+			
+			<h2>클래스 <span class="span_green">연습</span>중3</h2>
+		</body>
+	</html>

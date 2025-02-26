@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 웹 페이지 내에서 다른 웹페이지를 삽입하는 태그
+     현재 페이지 안에 또 다른 HTML페이지나 외부 콘텐츠(유튜브 영상, 지도 등)를 불러올 수 있다. -->
+     <H1>웹 페이지 삽입하기</H1>
+     <iframe src="https://www.wikipedia.org" width="800" height="500"></iframe>
+
+     <hr>
+
+     <h1>유튜브 영상 삽입</h1>
+     <iframe src="https://www.youtube.com/embed/jSJM9iOiQ1g"
+        width="560"
+        height="315"
+        frameborder="0"
+        style="border: 2px solid red"
+        allowfullscreen>
+     </iframe>
+     <hr>
+     <h1>구글 지도 삽입</h1>
+     <!-- loading="lazy" 페이지가 처음 로드될 때 iframe의 컨텐츠를
+      바로 로드하지 않고 사용자가 스크롤을 내려 해당 위치에 도달했을 때
+      로드한다. -->
+     <iframe
+        width="600"
+        height="450"
+        style="border:0"
+        loading="lazy"
+        allowfullscreen
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12662.945929451493!2d126.72806839999998!3d37.49054445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b7c458a2bfa4b%3A0x779a3f7931ea387c!2z6rmA7JiB7Y647J6F7ZWZ7JuQIOu2gO2Piey6oO2NvOyKpA!5e0!3m2!1sko!2skr!4v1740380757603!5m2!1sko!2skr">
+    </iframe>
+    <hr>
+    <h1> 내부 HTML 문서 삽입 </h1>
+    <iframe src="table.html" width="600" height="400"></iframe>
+    <h2> iframe 안에 직접 HTML 작성</h2>
+    <iframe width="400" height="300" style="border:0" srcdoc="
+        <html>
+            <body>
+                <h2>내장된 html</h2>
+                <p>이 `iframe`은 내부적으로 HTML을 포함하고 있음!</p>
+            </body>
+        </html>">
+    </iframe>
+    <!-- 주의해야 할 점
+     1. 일부 사이트는 iframe 삽입을 차단함
+     2. 반응형 웹 디자인에 적절하지 않음 -> 너비와 높이가 고정되어 있으니까 레이아웃이 깨질 수 있음
+     CSS이용해서 반응형으로 만들 수 있다.
+     3. SEO(검색 엔진 최적화)가 불리할 수 있다. -> iframe 안에 있는 내용은 검색엔진이 못읽어서-->
+     <hr>
+     <h1>오디오태그</h1>
+     <audio controls>
+        <source src="파일명" type="audio/mpeg">
+        브라우저가 오디오 태그를 지원하지 않습니다.
+     </audio>
+
+     <hr>
+     <h1>비디오태그</h1>
+     <video controls width="600">
+        <source src="비디오경로" type="video/mp4">
+        브라우저가 비디오 태그를 지원하지 않습니다.
+     </video>
+
+</body>
+</html>

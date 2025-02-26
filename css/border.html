@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* border-width : 테두리 두께
+           border-color : 테두리 색깔
+           border-style : 테두리 스타일 */
+        p{
+            border-width: 5px;
+            border-color:blue;
+        }
+        
+        .box1{border-style:none;}
+        .box2{border-style:hidden;}
+        .box3{border-style:dotted;}
+        .box4{border-style:dashed;}
+        .box5{border-style:solid;}
+        .box6{border-style:double;}
+        /* border속성을 통해 두께, 색상, 스타일을
+        한번에 지정하는것도 가능하다. */
+        .box7{border: 20px groove red;}
+        .box8{border: 20px green ridge;}
+        .box9{border: inset 20px orange;}
+        .box10{border: 20px outset #e6e6fa}
+
+        .div1{border: 20px solid #f00;}
+        .div2{
+            border: 20px solid #0f0;
+            width: 200px;
+            height: 100px;
+        }
+        /* 테두리별로 두께와 스타일을 다르게 주는것도 가능하다. 
+            border-로 시작을 한다.
+            위: top
+            아래: bottom
+            오른쪽 : right
+            왼쪽 : left
+        */
+        .div3{
+            border-bottom: 10px solid blue;
+            border-top: 10px solid green;
+            border-left: 10px solid red;
+        }
+
+        /* inline속성을 가지는 태그들이 차지하는 영역은
+        내용(content)만큼이다. */
+        span{
+            border : 5px solid #aaf;
+            width: 500px;
+            height:100px;
+        }
+    </style>
+</head>
+<body>
+    <!-- border : 요소의 테두리를 정의하는 속성(두께, 스타일, 색상) -->
+     <p class="box1">border테스트 중1</p>
+     <p class="box2">border테스트 중2</p>
+     <p class="box3">border테스트 중3</p>
+     <p class="box4">border테스트 중4</p>
+     <p class="box5">border테스트 중5</p>
+     <p class="box6">border테스트 중6</p>
+     <p class="box7">border테스트 중7</p>
+     <p class="box8">border테스트 중8</p>
+     <p class="box9">border테스트 중9</p>
+     <p class="box10">border테스트 중10</p>
+
+     <div class="div1">div에 테두리 주기</div>
+     <div class="div2">div에 테두리 주기</div>
+     <div class="div3">div에 테두리 주기</div>
+
+     <span>hi</span>
+     <span>hello</span>
+
+</body>
+</html>

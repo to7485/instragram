@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 테이블 태그
+     HTML 테이블은 <table>,<tr><td>,<th>,<thead>,<tbody>,<tfoot>등으로 구성되어있다.
+    <tr>은 데이터의 행
+    <td>는 데이터의 열
+    thead - 헤더영역, tbody - 본문영역, tfoot은 - 푸터영역으로 구분할 수 있다.
+    -->
+    <h3>1행 2열 테이블 만들기</h3>
+    <table border="1">
+        <tr>
+            <td>1행 1열</td>
+            <td>1행 2열</td>
+        </tr>
+    </table>
+    <hr>
+    <h3> 2행 1열 테이블 </h3>
+    <table border="1">
+        <tr>
+            <td>1행 1열</td>
+        </tr>
+        <tr>
+            <td>2행 1열</td>
+        </tr>
+    </table>
+    <hr>
+    <h3>2행 2열 테이블</h3>
+    <table border="1">
+        <tr>
+            <td>1행 1열</td> 
+            <td>1행 2열</td>
+        </tr>
+        <tr>
+            <td>2행 1열</td>
+            <td>2행 2열</td>
+        </tr>
+    </table>
+    <hr>
+    <h3>테이블 열 합치기</h3>
+    <table border="1">
+        <tr>
+            <td colspan="3">메뉴판</td>
+        </tr>
+        <tr>
+            <td>짜장</td>
+            <td>짬뽕</td>
+            <td>탕수육</td>
+        </tr>
+    </table>
+    <hr>
+    <h3>테이블 행 합치기</h3>
+    <table border="1">
+        <tr>
+            <td rowspan="2">메뉴판</td>
+            <td>짜장</td>
+        </tr>
+        <tr>
+            <td>짬뽕</td>
+        </tr>
+    </table>
+    <hr>
+    <h3> 그룹짓기 </h3>
+    <!-- <thead> 태그는 HTML 테이블에서 헤더 콘텐츠들을
+        하나의 그룹으로 묶을 때 사용
+        <tbody>는 본문, <tfoot>은 하단 그룹을 명시할 때 사용
+        웹 페이지의 레이아웃에 영향을 주지는 않지만, 이요소들의
+        스타일을 CSS를 이용하여 변경할수는 있다. -->
+    <table border="1">
+        <thead>
+            <tr>
+                <th>출장비 내역</th>
+                <th>금액</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>교통비</td>
+                <td>45000</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>총 합계</td>
+                <td>103000</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
+
+
+

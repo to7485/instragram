@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* margin을 주게 되면 내 생각보다 크기가 작아질 수 있다. */
+        p{
+            border:2px solid red;
+            background:#ffb6a0;
+        }
+
+        #box1{
+            margin: 0; /*상,하,좌,우 적용*/
+        }
+
+        #box2{
+            margin: 20px 50px; /*상하, 좌우 적용*/
+        }
+
+        #box3{
+            margin: 30px 50px 30px;/*상, 좌우, 하*/
+        }
+
+        #box4{
+            margin: 50px 30px 50px 70px;/*상 우 하 좌 적용*/
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 요소와 외부사이의 여백 -->
+     <p id="box1">마진 적용 테스트중</p>
+     <p id="box2">마진 적용 테스트중</p>
+     <p id="box3">마진 적용 테스트중</p>
+     <p id="box4">마진 적용 테스트중</p>
+     <p id="box5">마진 적용 테스트중</p>
+</body>
+</html>

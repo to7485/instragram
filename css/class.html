@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 2.임베디드방식 -->
+    <style>
+        div.box h1{color:blue;}
+        span{color:violet;}
+        h3.headings.headings2{color:black;}
+        h3.headings{color:tan;}; /*그룹으로 묶어서 스타일을 줄 때 유용하다.*/
+    </style>
+
+    <!-- 3.링크방식 -->
+    <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+
+    <!-- 4.import 방식 -->
+    <!-- <style>
+       @import url(style2.css);
+    </style> -->
+
+</head>
+<body>
+    <!-- 1.인라인 방식 -->
+    <p style="color:red;">인라인 스타일 방식</p>
+
+    <h1> 클래스 선택자를 이용한 선택</h1>
+    <h2 class="headings"> 이 부분에 <span>스타일</span>을 적용합니다.</h2>
+    <p>클래스 선택자를 이용하여 스타일을 적용할 HTML요소들을 한 번에 선택할 수 있습니다.</p>
+    <h3>클래스가 없는 h3</h3>
+    <h3 class="headings">이 부분에도 같은 스타일을 적용합니다.</h3>
+    <h3 class="headings headings2">이 부분에는 다른 스타일과 추가 스타일을 적용합니다.</h3>
+
+    <div class="box">
+        <h1>스타일 테스트</h1>
+        <div class="box">
+            <h1>div 안에 스타일 테스트</h1>
+        </div>
+    </div>
+</body>
+</html>
