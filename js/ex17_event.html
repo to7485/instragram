@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //함수의 선언
+        let myFunction = () => alert("버튼이 클릭되었습니다.");
+    </script>
+</head>
+<body>
+    <h2>1. HTML 속성을 이용한 이벤트 처리</h2>
+    <button onclick="myFunction()">클릭</button><br>
+    
+    <h2>2. 프로퍼티를 이용한 이벤트 처리</h2>
+    <button class="btn">Click me</button>
+    <script>
+        // 1. js로 제어할 html태그 선택하기
+        let btn = document.querySelector('.btn');
+
+        // btn.onclick = () => alert("button clicked 1");
+
+        //프로퍼티 방식은 하나의 이벤트만 사용할 수 있다.
+        btn.onclick = function(){
+            alert("button clicked 1");
+        }
+
+        btn.onclick = function(){
+            alert("button clicked 2");
+        }
+    </script>
+    <h2>3. DOM요소에 이벤트리스너 추가하기</h2>
+    <button id="target1">button1</button>
+    <button id="target2">button2</button>
+
+    <script>
+        // document.querySelector("#target1")
+        // .addEventListener("click",
+        //     () => alert("버튼이 클릭되었습니다.")
+        // );
+
+        // document.querySelector("#target2")
+        // .addEventListener("click",
+        //     () => alert(2)
+        // )
+
+        let t1 = document.querySelector("#target1");
+        let t2 = document.querySelector("#target2");
+
+        let btn_listener = () => {
+            switch(event.target.id){
+                case 'target1':
+                    alert(1);
+                    break;
+                case 'target2':
+                    alert(2);
+                    break;
+            }
+        }
+        t1.addEventListener('click',btn_listener);
+        t2.addEventListener('click',btn_listener);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    section{
+        display: flex;
+        border: 1px dashed black;
+    }
+
+    div{
+        width: 60px; height: 60px;
+        text-align: center;
+        font-size: 2em;
+        color: white;
+        border: 2px solid black;
+        margin: 10px;
+    }
+
+    div:nth-child(1){
+        background: yellowgreen
+    }
+
+    div:nth-child(2){
+        background: violet
+    }
+
+    div:nth-child(3){
+        background: cornflowerblue
+    }
+
+    /* flex-direction 
+    요소들을 어떤 방향으로 배치할지
+    주 축(main axis)을 결정 */
+
+    /* 왼쪽에서 오른쪽으로 배치 */
+    .row{
+        flex-direction: row;
+    }
+
+    /* 오른쪽에서 왼쪽으로 배치 */
+    .row-reverse{
+        flex-direction: row-reverse;
+    }
+
+    /* 위에서 아래로 배치 */
+    .column{
+        flex-direction: column;
+    }
+
+    /* 아래에서 위로 배치 */
+    .column-reverse{
+        flex-direction: column-reverse;
+    }
+    </style>
+</head>
+<body>
+    <h3>row</h3>
+    <section class="row">
+        <div>01</div>
+        <div>02</div>
+        <div>03</div>
+    </section>
+    <section class="row-reverse">
+        <div>01</div>
+        <div>02</div>
+        <div>03</div>
+    </section>
+    <section class="column">
+        <div>01</div>
+        <div>02</div>
+        <div>03</div>
+    </section>
+    <section class="column-reverse">
+        <div>01</div>
+        <div>02</div>
+        <div>03</div>
+    </section>
+</body>
+</html>

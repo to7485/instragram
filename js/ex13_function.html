@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //자바스크립트에서 제공하는 함수
+        //별도의 객체 없이 바로 호출해서 사용할 수 있다.
+
+        //eval()
+        //문자열로 표현된 자바스크립트 코드를 실행시키는 함수
+        let x = 10, y = 20;
+        let a = eval("x+y");//30
+        let b = eval("y*3");//60
+        console.log(a);
+        console.log(b);
+
+        //isFinite()
+        //매개변수로 전달된 값이 유한한 수인지 검사하여 결과를 반환한다.
+        //유한하면 true 무한이면 false
+        console.log(isFinite(123));
+        console.log(isFinite(123e100));
+        console.log(isFinite("123"));//인수로 전달된 값이 숫자가 아니면, 숫자로 변환한다.
+        console.log(isFinite("문자열"));//false
+        console.log(isFinite(undefined));//false
+        console.log(isFinite(true));//true
+        console.log(isFinite(null));//true
+
+        //isNaN()
+        //매개변수로 전달된 값이 NaN인지 검사하여 결과를 반환
+        //인수로 전달된 값이 숫자가 아니면, 숫자로 변환한다.
+        //숫자가 아니면 true, 숫자면 false
+        console.log(isNaN(123));
+        console.log(isNaN("123"));
+        console.log(isNaN("문자열"));
+
+        //parseFloat()
+        //문자열을 읽어서(파싱) 실수(숫자)로 반환
+        console.log(parseFloat("123"));
+        console.log(parseFloat("123.000"));
+        console.log(parseFloat("123.456"));
+
+        //parseInt()
+        //문자열을 읽어서 정수로 반환
+        console.log(parseInt("123"));
+        console.log(parseInt("123.456"));
+
+        //두번째 인자로 특정 진법을 전달하면, 해당 진법에 맞는 정수로
+        //반환한다.
+        console.log(parseInt("10",10));
+        console.log(parseInt("10",8));
+        console.log(parseInt("10",16));
+        console.log(parseInt("10",2));
+
+        //encodeURI()
+        //URI에서 주소를 표시하는 특수문자를 제외하고, 모든 문자를
+        //이스케이프 시퀀스 처리하여 부호화한다.
+        //uri : 주소 + 데이터
+        //"http://google.com/search.php?name=홍길동&city=서울";
+        let uri = "http://google.com/search.php?name=홍길동&city=서울";
+        let enc1 = encodeURI(uri);
+        console.log(enc1);
+        let enc2 = encodeURIComponent(uri);
+        console.log(enc2);
+
+        //자바스크립트에서 제공하는 객체와 메서드
+        //Math
+        //Math.random()
+        //0과 1사이의 난수를 제공
+        let random = Math.random()*45 +1;
+        console.log(random);
+
+        //Math.floor()
+        //소수점내림
+        console.log(Math.floor(random));
+
+        //Math.ceil()
+        //올림
+        console.log(Math.ceil(random));
+
+        //Math.round()
+        //반올림
+        console.log(Math.round(random));
+
+        //Math.max()
+        //최대값 찾기
+        console.log(Math.max(1,2,3,4,5))
+
+        //Math.min()
+        //최소값 찾기
+        console.log(Math.min(1,2,3,4,5))
+
+        //Math.pow()
+        //거듭제곱 수행
+        console.log(Math.pow(2,3)); //8
+
+        //Math.sqrt()
+        //제곱근을 계산
+        console.log(Math.sqrt(9));
+
+        //Math.abs()
+        //절대값을 구한다.
+        console.log(Math.abs(-5));
+
+        //문자열관련 메서드
+        //indexOf()
+        //문자열 내에서 지정한 문자열의 첫 번째 인덱스를 반환
+        let str = "Hello, world";
+        console.log(str.indexOf("world"));//7
+
+        //lastIndexOf()
+        //문자열 내에서 지정한 문자열의 마지막 인덱스값을 반환
+        console.log(str.lastIndexOf('l'));
+
+        //includes()
+        //문자열에 특정 부분 문자열이 포함되어 있으면 true
+        //포함되어 있지 않으면 false
+        console.log(str.includes("Hello"));
+
+        //startWith()
+        //문자열이 지정한 문자열로 시작하는지 확인
+        console.log(str.startsWith("Hell"));
+
+        //slice()
+        //문자열의 일부를 잘라내어 새로운 문자열로 반환
+        console.log(str.slice(7,12));
+
+        //replace()
+        //문자열의 일부 내용을 새로운 문자열로 치환환 결과를 반환
+        console.log(str.replace("world","JavaScript"));
+
+        //concat()
+        //하나 이상의 문자열을 연결하여 새로운 문자열을 만든다.
+        let str1 = "Hello";
+        let str2 = "World";
+        console.log(str1.concat(", ",str2));
+
+        //trim()
+        //문자열 양 끝의 공백을 제거한 새로운 문자열을 반환합니다.
+        let strWithSpace = "   Hello, world   ";
+        console.log(strWithSpace.trim());
+
+        let quiz = "   n i c e t o m e e t y o u   ";
+
+        //console.log(quiz.replaceAll(' ',''));
+        
+        let cArr = quiz.trim().split(' ');
+        console.log(cArr);
+
+        let answer ='';
+        for(let s of cArr){
+            answer += s;
+        }
+        console.log(answer);
+
+        //split()
+        //문자열을 지정한 구분자로 나눠서 배열로 반환
+        str = "apple,banana,cherry";
+        console.log(str.split(','));
+
+        //charAt()
+        //지정한 인덱스의 문자를 반환한다.
+        console.log(str.charAt(0));
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

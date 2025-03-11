@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //원의 넓이를 구하는 circleArea함수 만들기
+        //원의 둘레를 구하는 circleRound만들기
+        //circleArea는 함수 안에서 출력하고 마무리
+        //circleRound는 둘레를 반환하기
+        //원의 넓이 : 3.14 * 반지름 * 반지름
+        //원의 둘레 : 2 * 3.14 * 반지름
+
+        function circleArea(r){
+            let area = 3.14 * r * r;
+            document.write(`원의 넓이 : ${area}cm<sup>2</sup><br>`)
+        }
+
+        circleArea(3);
+
+        function circleRound(r){
+            let round = 2 * 3.14 * r;
+            return round
+        }
+        document.write(`원의 둘레 : ${circleRound(3)}<br>`)
+
+        //사칙연산을 하는 arithmetic함수만들기
+        //두 숫자의 덧셈,뺄셈,곱셈,나눗셈을 구하여 출력하기
+        function arithmetic(x,y){
+            console.log(`x + y -> ${x+y}`);
+            console.log(`x - y -> ${x-y}`);
+            console.log(`x * y -> ${x*y}`);
+            console.log(`x / y -> ${x/y}`);
+        }
+
+        arithmetic(10,7);
+        document.write("<hr>");
+        //fToc함수를 만들어서 화씨를 섭씨로 바꿔서 출력하기
+        //cTof함수를 만들어서 섭씨를 화씨로 바꿔서 출력하기
+        // 화씨 -> 섭씨 : (화씨 -32) /1.8
+        // 섭씨 -> 화씨 : 1.8*섭씨 + 32
+
+        function fToc(f){
+            return (f -32) /1.8;
+        }
+
+        document.write("fToc : ",fToc(60),"<br>");
+
+        function cTof(c){
+            return c*1.8 + 32;
+        }
+
+        document.write("cTof : ",cTof(20),"<br>");
+
+
+        document.write("<hr>");
+        //1 ~9 사이의 정수를 전달하여 해당 구구단을 출력하는 showTable함수
+        //작성하기 (화면에 출력하시오)
+
+        function gugudan(x){
+            let gugudan = '';
+            for(let i = 1; i<=9; i++){
+                gugudan += `${x} x ${i} = ${x*i}<br>`
+            }
+
+            return gugudan;
+        }
+
+        document.write(gugudan(3)+"<br>");
+
+        //매개변수로 임의의 숫자를 전달하여 1 ~ N까지의 총합을 구하는
+        //total함수 만들고 값을 반환하여 화면에 출력하기
+
+        document.write("<hr>");
+        function total(N){
+            let total = 0;
+            for(let i = 1; i <=N; i++){
+                total += i;
+            }
+
+            document.write(`1 ~ ${N}까지의 총합 : ${total}<br>`)
+        }
+    
+        total(10);
+        document.write("<hr>");
+
+        //N ~ M 까지의 총합
+        //N이 M보다 큰 경우 자리를 바꿔서 총합 구하는 total2함수
+        //ex 1 ~ 5 까지의 합이랑 5 ~ 1까지의 합이 같아야 함
+
+        function total2(N, M){
+            let sum = 0;
+            let temp = 0;
+            if(N > M){
+                temp = N;
+                N = M;
+                M = temp;
+            }
+            for(let i = N; i<=M; i++){
+                sum += i;
+            }
+            document.write(`${N} ~ ${M}까지의 합 : ${sum}<br>`)
+            // if(N > M){
+            //     for(let i = M; i<=N; i++){
+            //         sum += i;
+            //     }
+            //     document.write(`${M} ~ ${N}까지의 합 : ${sum}<br>`)
+            // } else if(M > N){
+            //     for(let i = N; i<=M; i++){
+            //         sum += i;
+            //     }
+            //     document.write(`${N} ~ ${M}까지의 합 : ${sum}<br>`)
+            // }   
+        }
+
+        total2(1,5);
+
+        document.write("<hr>");
+        //숫자들이 담긴 배열을 매개변수로 받아, 배열 내 최대값을 반환하는
+        //max_arr함수 만들기
+
+        function max_arr(arr){
+            let max = arr[0];
+            for(let x of arr){
+                if(x > max){
+                    max = x;
+                }
+            }
+            return max;
+        }
+
+        document.write("가장 큰 수 : " ,max_arr([1,2,3,4,5]))
+
+        document.write("<hr>");
+        //문자열 뒤집기
+        //문자열을 매개변수로 받아, 
+        // 해당 문자열을 뒤집어 반환하는 함수reverse를 작성하세요
+
+        function reversed(s){
+            let str = s;
+            let reversed = "";
+
+            for(let i = str.length-1; i >=0; i--){
+                reversed += str[i];
+            }
+
+            document.write(reversed);
+        }
+
+        reversed("hello");
+        
+
+
+
+
+
+
+
+
+
+        
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* grid-template-columns : 트랙 기준 크기와 개수를 정한다(열) 
+           grid-template-rows : 트랙 기준 크기와 개수를 정한다(행)
+        */
+
+        .wrapper{
+            display:grid;
+            /* grid-template-columns : 300px 50px 100px;
+            grid-template-rows: 200px 50px; */
+            /* repeat() 함수: repeat(횟수,크기) */
+            /* grid-template-columns: repeat(9,100px); */
+            /* 100px 100px 100px 100px 100px 100px 100px 100px */
+            /* grid-template-columns: repeat(2, 100px 200px 50px); */
+            /* 100px 200px 50px, 100px 200px 50px */
+            grid-template-rows: repeat(3, minmax(100px, auto));
+            /* 최소 100px, 내용이 많아지면 알아서 너비를 처리 */
+        }
+
+        div:nth-child(1){
+            background:yellowgreen;
+        }
+
+        div:nth-child(2){
+            background: lightpink;
+        }
+
+        div:nth-child(3){
+            background:lightsalmon
+        }
+
+        div:nth-child(4){
+            background: lightskyblue;
+        }
+
+        div:nth-child(5){
+            background:tan;
+        }
+
+        div:nth-child(6){
+            background: peru;
+        }
+
+    </style>
+</head>
+<body>
+    <section class="wrapper">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </section>
+</body>
+</html>

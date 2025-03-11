@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //농구공이 23개가 있다.
+        //하나의 박스에 4개씩 들어갈 수 있다.
+        //총 필요한 박스의 개수를 구하세요
+        //박스의 개수 :
+
+        let ball = 21;
+        let box = 4;
+
+        let answer = ball % box == 0 ? ball/box : Math.ceil(ball/box);
+
+        document.write("박스의 개수 : "+ answer+"개<br>");
+
+        //사각형의 면적과 둘레 계산하기
+        //가로 : 10
+        //세로 5
+        //면적 : 
+        //둘레 : 
+
+        let width = 10;
+        let height = 5;
+        let area = width * height;
+        let round = 2*(width+height); //둘레 2*(가로+세로);
+        document.write("사각형의 면적 : " + area+"<br>")
+        document.write("사각형의 둘레 : " + round+"<br>")
+
+
+        //숫자들의 평균 구하기
+        //숫자1 : 80
+        //숫자2 : 95
+        //숫자3 : 75
+        //총합 : 
+        //평균 : 
+
+        let score1 = 80;
+        let score2 = 95;
+        let score3 = 75;
+        let totalScore = score1+ score2+ score3;
+        document.write("총합 : " + totalScore+"<br>");
+        let average = totalScore / 3;
+        document.write("평균 : " + average+"<br>");
+
+        //하루의 총 시간을 초로 계산하기
+        //하루는 24시간
+        let hours = 24;
+        let minutes = 60;
+        let seconds = 60;
+        let totalSeconds = hours * minutes * seconds;
+        document.write("하루에 총 초 : " + totalSeconds+"<br>")
+
+        //섭씨 온도를 화씨 온도로 변환하기
+        //화씨 = 섭씨 * 1.8 + 32;
+        // 25도를 화씨로 변환하여 출력하세요
+        let cel = 25;
+        let f = cel * 1.8 + 32;
+        document.write("화씨 : " + f+"<br>");
+
+        //let a, b;
+        //a = b = 3 + 4 * 5;
+
+        //a : 23
+        //b : 23
+
+        //let x;
+        //x = 10 /2 * 3;
+        //왼쪽부터 오른쪽으로 진행 후 x에 대입
+
+        //x : 15
+
+        //let result
+        //result = 5 + 3 > 7 && 2 < 4;
+        //result : true
+
+        //1. 산술연산자 계산
+        //2. 비교연산자 계산
+        //3. 논리연산자 계산
+
+        //let a,b,c,total
+        //total = (a=2) + (b=3) * (c=4)
+        //1. total : 14
+        //2. a:2  ,b:3 ,c: 4
+
+        //1. 소괄호 연산
+        //2. 산술연산(*) -> 산술연산(+)
+        //3. 대입연산
+
+        //let a,x;
+        //x = (a = 5) > 3 ? a * 2: a / 2;
+        //a : 5
+        //x : 10
+
+        //1. 소괄호 가장 먼저 계산
+        //2. 비교연산
+        //3. 삼항연산
+        //4. 대입연산
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section{
+            display:flex;
+            border: 1px dashed black;
+        }
+
+        div{
+            width: 500px; height: 100px;
+            text-align:center;
+            font-size : 20px;
+            color: white;
+            border: 2px solid black;
+            margin: 10px;
+        }
+
+        div:nth-child(1){
+            background: yellowgreen;
+        }
+        div:nth-child(2){
+            background: violet;
+        }
+        div:nth-child(3){
+            background: cornflowerblue;
+        }
+        div:nth-child(4){
+            background: tomato;
+        }
+        div:nth-child(5){
+            background: tan;
+        }
+        div:nth-child(6){
+            background: orange;
+        }
+
+        .nowrap{
+            flex-wrap: nowrap;
+        }
+
+        .wrap{
+            flex-wrap: wrap;
+        }
+
+        .wrapReverse{
+            flex-wrap: wrap-reverse
+        }
+    </style>
+</head>
+<body>
+    <!-- 브라우저의 너비에 따라 요소가 늘어나거나
+     감소하는 속성 -->
+    <h1>noWrap</h1>
+    <section class="nowrap">
+        <div>01</div>
+        <div>02</div>
+        <div>03</div>
+        <div>04</div>
+        <div>05</div>
+        <div>06</div>
+    </section>
+
+    <h1>wrap</h1>
+    <section class="wrap">
+        <div>01</div>
+        <div>02</div>
+        <div>03</div>
+        <div>04</div>
+        <div>05</div>
+        <div>06</div>
+    </section>
+
+    <h1>wrap-reverse</h1>
+    <section class="wrapReverse">
+        <div>01</div>
+        <div>02</div>
+        <div>03</div>
+        <div>04</div>
+        <div>05</div>
+        <div>06</div>
+    </section>
+</body>
+</html>

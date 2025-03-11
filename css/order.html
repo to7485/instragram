@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .flex-container{
+            display:flex;
+            height: 200px;
+            border: 2px solid #333;
+            padding: 10px;
+        }
+
+        .flex-item{
+            background-color: lightblue;
+            color: #333;
+            margin:10px;
+            padding: 20px;
+            border: 1px solid darkblue;
+        }
+
+        .item1{
+            order:3;
+            flex-grow: 1;
+        }
+        .item2{
+            order: 1;
+            flex-grow: 2;
+            align-self: flex-start;
+        }
+
+        .item3{
+            order:2;
+            flex-basis: 100px; /*기본 크기를 100px로 지정*/
+            flex-shrink: 1; /*공간이 부족할 때 축소*/
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Flex Item 속성 예제</h1>
+    <div class="flex-container">
+        <div class="flex-item item1">Item 1</div>
+        <div class="flex-item item2">Item 2</div>
+        <div class="flex-item item3">Item 3</div>
+    </div>
+</body>
+</html>

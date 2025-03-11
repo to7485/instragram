@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function check(f){
+            //유효성 검사
+
+            //id값 가져오기
+            let myId = f.m_id.value;
+
+
+            f.submit();
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <table border="1">
+            <tr>
+                <th>ID : </th>
+                <td><input name="m_id" placeholder="아이디를 입력해주세요"></td>
+            </tr>
+            <tr>
+                <th>AGE : </th>
+                <td><input name="m_age"></td>
+            </tr>
+            <tr>
+                <th>PWD : </th>
+                <td><input type="password" name="m_pwd"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <!-- 버튼을 포함하고 있는 form태그의 정보를 매개변수로 전달 -->
+                    <input type="button" value="전송" onclick="check(this.form)">
+
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

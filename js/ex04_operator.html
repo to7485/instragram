@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //산술연산자
+        let num1 = 10;
+        let num2 = 7;
+
+        document.write("num1 + num2 = " + (num1+num2)+"<br>");
+        document.write("num1 - num2 = " + (num1-num2)+"<br>");
+        document.write("num1 * num2 = " + (num1*num2)+"<br>");
+        document.write("num1 / num2 = " + (num1/num2)+"<br>");//1.4285
+        document.write("num1 % num2 = " + (num1%num2)+"<br>");//3
+
+        document.write("num1 : ",num1,"<br>");
+        document.write("num2 : ",num2,"<br>");
+
+        document.write(2**3,"<br>");
+
+
+        //문자 결합 연산자
+        //여러개의 문자를 하나의 문자형 데이터로 결합할 때 사용
+        //더하기에 피연산자로 문자형 데이터가 한 개라도 포함되어 있으면
+        //다른 피연산자의 데이터는 자동으로 문자형 데이터로 변환되고
+        //문자 결합이 이루어져 하나의 문자형 데이터가 된다.
+
+        document.write("<hr>")
+
+        document.write("Text1 " + "Text2<br>")
+        document.write("100"+200,"<br>")
+        document.write(100+"200","<br>")
+
+        //대입연산자
+        //우변에 값을 좌변에 대입해주는 연산자
+        // =
+
+        //복합대입연산자
+        let str = "<table border='1'>";
+        str += "<tr>"; //str = "<table border='1'>" + "<tr>";
+        str += "<td>1</td><td>2</td><td>3</td>";//str = "<table border='1'><tr>"+"<td>1</td><td>2</td><td>3</td>";
+        str += "</tr>";
+        str += "</table>";
+
+        document.write(str)
+
+        document.write("<hr>")
+        //증감연산자
+        //숫자형 데이터를 1씩 증가하거나 감소하는 역할
+        //++, --
+
+        //선행 증감 연산자
+        //++변수, --변수
+
+        //후행 증감 연산자
+        //변수++, 변수--
+
+        let n1 = 5;
+
+        let n2 = ++n1; //선행증감 연산자는 먼저 연산이 된후 대입
+
+        //n1 += 1; -> n1 = n1 + 1;
+
+        document.write("n2 : " ,n2,"<br>");
+        document.write("n1 : " ,n1,"<br>");
+
+        let n3 = 5;
+
+        let n4 = n3++; //대입이 일어난 후 증감연산이 진행이 된다.
+
+        document.write("n4 : " ,n4,"<br>");
+        document.write("n3 : " ,n3,"<br>");
+
+        let x = 3 , y = 3;
+        let z = x++ + ++y;
+
+        document.write("x: "+x +"<br>");
+        document.write("y: "+y +"<br>");
+        document.write("z: "+z +"<br>");
+        document.write("<hr>");
+        //비교연산자
+        //두 개의 데이터를 '크다','작다','같다'와 같이 비교할 때 사용
+        //연산된 결과는 논리형데이터로 돌려준다.
+
+        let a = "10" , b = 10;
+        let result = a > b
+        document.write("a > b : ", result ,"<br>")
+        result = a < b;
+        document.write("a < b : ", result ,"<br>")
+        result = a >= b;
+        document.write("a >= b : ", result ,"<br>")
+        result = a <= b;
+        document.write("a <= b : ", result ,"<br>")
+        result = a == b;
+        document.write("a == b : ", result ,"<br>")
+        result = a === b;
+        document.write("a === b : ", result ,"<br>")
+        result = a != b
+        document.write("a != b : ", result ,"<br>")
+        result = a !== b
+        document.write("a !== b : ", result ,"<br>")
+        document.write("<hr>");   
+        //논리연산자
+        //논리형 데이터 두개를 가지고 연산
+
+        // ||(OR)
+        // T || T -> T
+        // T || F -> T
+        // F || T -> T
+        // F || F -> F
+
+        // &&(AND)
+        // T && T -> T
+        // T && F -> F
+        // F && T -> F
+        // F && F -> F
+
+        // !(NOT)
+        // !T -> F
+        // !F -> T
+
+        x = 10, y = 7;
+        result = x < y && ++x != y;
+        document.write("result : " + result+"<br>")
+        document.write("x : " + x +"<br>");
+
+        document.write("<hr>");
+
+        //삼항 조건 연산자
+        //참일 때 실행할 명령, 거짓일 때 실행할 명령이  있는 연산자.
+        // 참or거짓 ? 참일 때 실행할 명령 : 거짓일 때 실행할 명령
+
+        result = x > y ? "x는 y보다 큽니다" : "x는 y보다 작습니다.";
+
+        document.write("결과 : " + result+"<br>");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
