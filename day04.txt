@@ -1,0 +1,267 @@
+수업이 끝나도 혼자 공부할 수 있도록 만드는것
+
+뭐든지 미리미리 하시는걸 권장
+github는 얼마나 사용했는지 티가 나기때문에 벼락치기X
+저한테 주소 보내주세요
+
+기획
+
+화면 -> HTML, CSS, JS
+로그인, 회원가입, 게시판 화면, 쇼핑몰 화면, 장바구니
+
+JS -> 프로그래머스에서 문제풀기 하루에 1문제
+감각을 잃지 않기
+
+리액트 -> js기반이기 때문에 js를 모르면 매우 힘들어짐
+
+공부하고 모르는점있으면 찾아보고 -> 질문
+eyunp07@naver.com
+
+db
+스키마
+내부스키마
+외부스키마
+개념스키마
+
+테이블(relation)
+ㄴ 행(튜플 tuple) 행의 개수를 cardinality
+ㄴ 열(attribute) 열의 개수를 degree
+
+자료형
+문자형 VARCHAR2()
+숫자형 NUMBER(P,S)
+날짜형 DATE
+
+제약조건
+NOT NULL
+CHECK
+DEFAULT
+PRIMARY KEY
+FOREIGN KEY
+UNIQUE
+
+모델링
+1. 요구사항 분석
+2. 개념모델링
+3. 논리모델링
+4. 물리모델링
+
+테이블에 어떤 속성이 들어가야 할지
+데이터의 길이는 얼마나 될지
+테이블간의 관계는 관계는 어떻게 구성해야 할지
+일대일, 일대다, 다대다
+
+SQL
+
+DDL
+CREATE
+DROP
+ALTER
+TRUNCATE
+
+DML
+SELECT(조회)
+INSERT(추가)
+DELETE(삭제)
+UPDATE(수정)
+
+이상현상과 정규화
+삽입이상 : 필요없는 데이터도 넣어야한다.
+갱신이상 : 전부다 갱신되지 않아서 정확하지 않을 수 있다.
+삭제이상 : 필요한 정보까지 삭제해버릴 수 있다.
+
+함수적 종속성
+완전함수종속이 되도록 만들어야 한다.
+부분함수종속
+이행함수종속
+
+함수적 종속성을 제거하는 과정이 정규화
+1차 정규화
+2차 정규화
+3차 정규화
+
+정규화를 너무 많이하면 테이블이 많이 쪼개져서 쿼리문을 작성하는데 더 힘들어지고 오히려 조회시간이 더길어질 수 있다.
+
+오라클에서 제공하는 함수
+문자함수
+
+숫자함수
+
+날짜함수
+
+NULL처리함수 -> NULL을 다른 데이터로 변환
+
+집계함수 -> NULL값을 집계하지 않음
+
+순위 함수
+
+그룹화
+소그룹을 만들어서 결과를 얻고자 할 때 
+
+HAVING 절
+WHERE과의 차이점
+
+WHERE에서는 집계함수에 대한 조건을 줄 수 없음
+HAVING은 일반컬럼, 집계함수에 대한 조건을 둘 다 줄 수 있다.
+
+where은 개별 행에 조건이 적용
+- group by전에 행을 필터링한다.
+
+having은 group by가 완료된 다음에 적용
+
+구문 실행순서
+1. FROM
+2. WHERE
+3. GROUP BY
+4. HAVING
+5. ORDER BY
+
+SQL중에서
+DDL
+DML
+DCL(Data Controll Language)
+데이터 제어어
+데이터베이스에 접근하고 객체들을 사용하도록 권한을 주고 회수하는 명령어
+
+GRANT : 권한 부여
+REVOKE : 권한 강탈
+
+scott을 통해 baby라는 일반 계정을 생성해보려고 한다.
+
+계정 생성방법
+create user 계정명 identified by 비밀번호;
+
+baby계정이 사용할 저장소를 생성해보자.
+select tablespace_name, status, contents
+from dba_tablespaces;
+
+dba_tablespaces
+Oracle 데이터베이스 내 모든 테이블스페이스에 관한 정보를 제공하는 뷰
+
+테이블스페이스
+논리적 저장소 단위
+데이터베이스 객체(테이블,인덱스 등)의 데이터를 저장하는 컨테이너 역할을 하며, 실제 데이터는 하나 이상의 데이터 파일에 저장된다.
+
+테이블스페이스는 하나 이상의 데이터 파일로 구성이 되고, 이 파일들은 물리적 저장소에 위치하며 실제 데이터를 저장한다.
+
+tablespace_name
+테이블스페이스의 이름을 확인할 수 있다.
+
+status
+테이블스페이스의 현재 상태를 나타낸다.
+
+contents
+테이블스페이스에 저장되는 데이터의 종류를 표시
+
+select file_name, tablespace_name, autoextensible
+from dba_data_files;
+
+dba_data_files
+오라클에서 사용되는 데이터 파일들의 세부정보를 제공하는 뷰
+
+file_name
+데이터 파일의 전체 경로와 파일명을 나타낸다.
+실제 디스크 상에 존재하는 파일의 위치를 확인할 수 있다.
+
+tablespace_name
+해당 데이터파일이 소속된 테이블스페이스의 이름을 보여준다.
+이를 통해 논리적 저장 단위와 물리적 파일 간의 관계를 파악할 수 있다.
+
+autoextensible
+데이터 파일이 자동 확장(autoextend) 기능으로 설정되어 있는지 여부를 나타낸다.
+'yes'또는'no'로 표기되며, 'yes'인 경우 파일 크기가 설정된 조건에 따라 자동으로 늘어난다.
+
+테이블스페이스의 생성
+BABY라는 이름으로 200MB의 크기로 생성해보자.
+위치는 C:\ORACLEXE\APP\ORACLE\ORADATA\XE\ 폴더에
+BABAY.DBF로 생성을 하자.
+데이터가 늘어나 테이블스페이스가 꽉 찰 것을 대비해서 5MB씩 자동으로 증가하게 하자
+
+CREATE 
+    TABLESPACE 테이블스페이스명
+    DATAFILE '경로와 이름'
+    SIZE 크기
+    AUTOEXTEND ON NEXT 크기
+    (MAXSIZE 크기)
+
+권한주기
+GRANT 권한 종류 TO 대상;
+
+SCOTT에게 계정 생성 권한 주기
+GRANT CREATE USER TO SCOTT;
+
+권한의 종류
+1. 시스템 권한
+- 데이터베이스 전체에 영향을 미치는 작업
+(사용자의 생성, 데이터베이스 구조 변경)
+- CREATE SESSION : 데이터베이스에 접속할 수 있는 권한
+- CREATE TABLE : 테이블을 생성할 수 있는 권한
+- ALTER SYSTEM : 시스템 설정을 변경할 수 있는 권한
+- CREATE USER : 사용자 계정을 생성할 수 있는 권한ㄷ
+
+객체 권한
+- 특정 데이터베이스 객체(테이블,뷰,프로시저)에 대해 부여되는 권한
+- SELECT
+- INSERT
+- UPDATE
+- DELETE
+
+GRANT SELECT,INSERT,UPDATE ON 테이블 to 대상;
+
+역할
+- 한 번에 여러 권한을 사용자에게 부여하거나 회수할 수 있도록 돕는다.
+- CONNECT : 기본적인 데이터베이스 접속 권한을 제공하는 역할
+- RESOURCE : 테이블, 인덱스 등 객체를 생성할 수 있는 권한을 포함하는 역할
+- DBA : 데이터베이스의 모든 관리 권한을 포함하는 최고 수준의 역할
+
+권한을 주거나 뺏는것은 관리자 계정으로부터 해야한다.
+
+alter user 계정명 default tablespace 테이블스페이스명 QUOTA unlimited on baby;
+
+baby계정의 기본 테이블스페이스를 BABY로 지정하면서
+무제한으로 사용을 할것이다.
+alter user baby default tablespace BABY QUOTA unlimited on baby;
+
+QUOTA
+- 사용자가 특정 테이블스페이스 내에서 사용할 수 있는 디스크 공간의 최대량을 지정하는데 사용되는 키워드
+
+인덱스(INDEX)
+- 테이블에 저장된 데이터를 보다 빠르게 검색할 수 있도록 도와주는 자료구조
+
+장점
+- 빠른 검색 : 인덱스를 사용하면 테이블 전체를 검색하지 않아도 되므로, 데이터 검색 속도가 크게 향상된다.
+
+- 효율적인 정렬 : 이미 정렬된 형태로 인덱스가 저장되어 있어, 정렬 연산이 빠르게 수행된다.
+
+단점
+추가 저장공간 필요 : 인덱스를 생성하면 별도의 저장 공간이 필요하다.
+
+데이터 수정 비용 증가 : INSERT,UPDATE,DELETE 작업시 인덱스도 함께 갱신이 되어야 하므로 성능이 저하될 수 있다.
+
+언제 인덱스가 사용이 되는가?
+- WHERE절
+쿼리에서 특정 조건을 만족하는 행을 찾을 때, 조건에 사용된 컬럼에 인덱스가 있으면 dbms가 전체 테이블을 스캔하는 대신 인덱스를 통해 빠르게 해당 행의 위치를 찾아간다.
+
+- GROUP BY, ORDER BY
+- 결과를 정렬 또는 그룹화 할 때도 인덱스가 사용된다.
+
+INDEX의 삭제
+- 조회 성능을 높이기 위해 만든 객체지만 저장공간을 많이 차지하며 DDL작업(INSERT, UPDATE,DELETE)시 부하가 많이 발생해 전체적인 데이터베이스 성능을 저하시킨다.
+- DBA는 주기적으로 INDEX를 검토하여 사용하지 않는 인덱스는 삭제하는 것이 데이터베이스 전체 성능을 향상시킬 수 있다.
+
+DROP INDEX 인덱스명;
+
+INDEX를 REBUILD하기
+- INSERT,UPDATE,DELETE와 같은 작업이 발생하면 인덱스의 검색속도를 저하시키고 전체 데이터베이스 성능에 영향을 미치므로 주기적으로 INDEX를 리빌딩하는 작업을 해줘야 한다.
+
+ALTER INDEX 인덱스명 REBUILD;
+
+
+
+
+
+
+
+
+
+

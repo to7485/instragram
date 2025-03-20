@@ -1,0 +1,32 @@
+내가 색을 바꾸고싶음 -> 누구의 색?(내가 원하는 요소를 고르기)
+
+적용방식
+CSS를 html파일에 어떻게 적용시키냐
+1. 인라인방식( 태그에 직접 적용)
+<h2 style="color:red">인라인 적용</h2>
+
+2. embedded방식
+<header>
+	<style>
+		h2{ color: "red";}
+	</style>
+</header>
+
+3. 링크방식 - 외부의 CSS파일을 불러와서 적용
+<link rel="stylesheet" type="text/css" href='css 외부 파일 경로'>
+
+4. @import 방식
+@import url(css/style.css);
+
+선택자
+css를 누구한테 적용시킬거냐
+
+1. 태그를 직접 선택
+문서에 해당 태그의 디자인이 전부다 바뀜
+단점 : 내가 원하는것만 바꿀수가 없음
+
+2. 클래스(class)선택자
+2-1. 태그에 클래스명을 붙인다.
+<태그명 class="클래스명">content</태그명>
+2-2. 클래스를 붙인 태그를 선택한다.
+.클래스명{선언;선언;}
